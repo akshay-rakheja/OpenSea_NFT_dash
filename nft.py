@@ -33,10 +33,14 @@ if endpoint == "Assets":
     response = r.json()
 
     for asset in response['assets']:
+        if asset['name']:
+            st.write(asset['name'])
+        else:
+            st.write(f"{asset['collection']['name']} # {asset['token_id']}")
         if asset['image_url'].endswith('mp4'):
             st.video(asset['image_url'])
         else:
             st.image(asset['image_url'])
 
 
-    # st.write(r.json())
+    st.write(r.json())
