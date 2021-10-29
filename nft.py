@@ -10,11 +10,13 @@ st.sidebar.subheader("Filters")
 
 collections = st.sidebar.text_input("Collection")
 owner_address = st.sidebar.text_input("Owner Address")
+st.sidebar.subheader('Check if on sale')
 project_address =  st.sidebar.text_input("Project Address")
 token_id = st.sidebar.text_input("Token ID(s)")
 
 
 my_address= '0x90f14e3282977416286085e0d90210A400bEFD22'
+
 stoner_cats = '0xd4d871419714b778ebec2e22c7c53572b573706e'
 
 # st.sidebar.subheader()
@@ -40,7 +42,7 @@ if endpoint == "Assets":
     response_assets = r.json()
     response_orders = o.json()
 
-    if len(params_orders)==0:
+    if len(params_orders)==0: # if order params arent entered
         for asset in response_assets['assets']:
             if asset['name']:
                 st.write(asset['name'])
@@ -75,4 +77,4 @@ if endpoint == "Assets":
                 st.image(order['asset']['image_url'])
 
 
-    st.write(r.json())
+    st.write(o.json())
