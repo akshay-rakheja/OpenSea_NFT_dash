@@ -1,6 +1,7 @@
 # Opensea Dashboard API
 
 Building a NFT dashboard using Streamlit and Opensea API
+
 Link to OpenSea doc: https://docs.opensea.io/reference/getting-assets
 Link to Streamlit doc: https://docs.streamlit.io/library/get-started/create-an-app
 
